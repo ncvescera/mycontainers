@@ -1,0 +1,15 @@
+version:  '3.8'
+services:
+  notebook:
+    image: tensorflow/tensorflow:latest-gpu-jupyter
+    volumes:
+      - ./data:/tf/notebooks
+    ports:
+      - 80:8888
+    container_name: notebook
+    
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
