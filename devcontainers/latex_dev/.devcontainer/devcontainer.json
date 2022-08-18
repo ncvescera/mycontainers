@@ -5,7 +5,7 @@
     "runServices": ["vscode"],
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/workspace",
-    "postCreateCommand": "",
+    "postCreateCommand": "tlmgr update --self", //auto-update the latex packagemanager
     "extensions": [
         "james-yu.latex-workshop",
         // Git
@@ -20,7 +20,17 @@
         // General settings
         "files.eol": "\n",
         // Latex settings
-        "latex-workshop.chktex.enabled": true,
+        
+        // the following line is deprecated ! 
+        //But it prevent the linter to work properly
+        // this linter is quite messy so probably is better to have it disabled
+        // in case decomment this line and comment the following 2
+        //"latex-workshop.chktex.enabled": true,
+        "latex-workshop.linting.chktex.enabled": true,
+        "latex-workshop.linting.chktex.exec.path": "chktex",
+        // https://www.nongnu.org/chktex/ChkTeX.pdf
+        // the linter manual with all the wornings explaining
+
         "latex-workshop.latex.clean.subfolder.enabled": true,
         "latex-workshop.latex.autoClean.run": "onBuilt",
         "editor.formatOnSave": true,
