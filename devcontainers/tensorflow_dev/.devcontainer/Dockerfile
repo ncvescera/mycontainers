@@ -15,7 +15,7 @@ RUN pip install matplotlib pandas seaborn
 RUN pip install sklearn
 
 # Hagging Face Transformers lib. Offers a lot of pre-trained NLP models like BERT, AlBERT, ecc
-RUN pip installtransformers 
+RUN pip install transformers 
 
 # package for natural language toolkit. Offers things like known set of stopwords, ecc.
 RUN pip install nltk
